@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const StyledCrossRevealContainer = styled.section`
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%; /* to maintain aspect ratio (responsive!) */
   .crossRevealImage {
     width: 100%;
     height: 100%;
@@ -16,7 +16,7 @@ const StyledCrossRevealContainer = styled.section`
     position: absolute;
     overflow: hidden;
     top: 0;
-    transform: translate(100%, 0);
+    transform: translate(100%, 0px);
   }
   .afterImage img {
     transform: translate(-100%, 0);
@@ -77,6 +77,7 @@ function CrossRevealSection({
   job,
   sentenceOne,
   sentenceTwo,
+  crossreveal,
 }) {
   // animate the container one way
   const containerRef = useRef(null);
@@ -99,20 +100,29 @@ function CrossRevealSection({
         scrub: true,
         pin: true,
         anticipatePin: 1,
-        markers: true,
+        // markers: true,
       },
     });
 
     // animate the container one way
     crossRevealTween
-      .fromTo(containerRef.current, { xPercent: 100, x: 0 }, { xPercent: 0 })
+      .fromTo(
+        containerRef.current,
+        { [crossreveal]: 100, x: 0 },
+        { [crossreveal]: 0 }
+      )
       // animate the image the opposite way at the same time
-      .fromTo(imageRef.current, { xPercent: -100, x: 0 }, { xPercent: 0 }, 0)
+      .fromTo(
+        imageRef.current,
+        { [crossreveal]: -100, x: 0 },
+        { [crossreveal]: 0 },
+        0
+      )
       // fade in the name and job
       .from(personRef.current, { autoAlpha: 0 }, 0)
       // fade in the quote
       .from(quoteRef.current, { autoAlpha: 0, delay: 0.26 }, 0);
-  }, []);
+  }, [crossreveal]);
 
   return (
     <StyledCrossRevealContainer ref={triggerRef}>
