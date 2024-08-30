@@ -44,7 +44,6 @@ function App() {
           "Poutine trust fund DIY pabst, art party hoodie you probably haven't heard of them single-origin coffee kombucha slow-carb glossier occupy cliche."
         }
       />
-
       <CrossRevealSection
         face={FaceOne}
         landscape={LandscapeOne}
