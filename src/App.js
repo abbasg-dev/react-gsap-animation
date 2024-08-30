@@ -2,6 +2,9 @@ import logo from "./assets/logo.svg";
 import styled from "styled-components";
 import ParallaxHeroSection from "./components/ParallaxHeroSection";
 import ContentSection from "./components/ContentSection";
+import CrossRevealSection from "./components/CrossRevealSection";
+import FaceOne from "./assets/images/faceOne.png";
+import LandscapeOne from "./assets/images/landscapeOne.png";
 
 const StyledHeroSection = styled.section`
   position: relative;
@@ -41,11 +44,14 @@ function App() {
           "Poutine trust fund DIY pabst, art party hoodie you probably haven't heard of them single-origin coffee kombucha slow-carb glossier occupy cliche."
         }
       />
-      <ContentSection
-        title={"Take Care Two"}
-        text={
-          "Poutine trust fund DIY pabst, art party hoodie you probably haven't heard of them single-origin coffee kombucha slow-carb glossier occupy cliche."
-        }
+
+      <CrossRevealSection
+        face={FaceOne}
+        landscape={LandscapeOne}
+        name={"Abbas Ghaith"}
+        job={"Sr. Frontend Developer"}
+        sentenceOne={"We only launch"}
+        sentenceTwo={"What we love"}
       />
     </>
   );
