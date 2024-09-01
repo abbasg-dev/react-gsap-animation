@@ -25,7 +25,7 @@ const StyledTitle = styled.h1`
   color: black;
   font-size: 2rem;
   font-weight: 400;
-  letter=spacing: 4px;
+  letter-spacing: 4px;
   text-align: center;
   text-transform: uppercase;
   padding-top: 4rem;
