@@ -14,13 +14,18 @@ const StyledParallaxWrapper = styled.div`
 const ForegroundHero = forwardRef((props, ref) => {
   const el = useRef();
 
-  useImperativeHandle(ref, () => {
-    return {
-      moveTo(x, y) {
-        gsap.to(el.current, { x, y });
-      },
-    };
-  });
+  // we create API .moveTo() that can be called by parent (in index.js)
+  useImperativeHandle(
+    ref,
+    () => {
+      return {
+        moveTo(x, y) {
+          gsap.to(el.current, { x, y });
+        },
+      };
+    },
+    []
+  );
 
   return (
     <StyledParallaxWrapper ref={el}>

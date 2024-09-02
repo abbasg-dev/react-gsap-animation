@@ -102,7 +102,7 @@ function ProductSection() {
         trigger: textSectionTriggerRef.current,
         start: "bottom bottom",
         scrub: true,
-        // markers: true,
+        //markers: true,
       },
     });
     scaleDownTween
@@ -132,7 +132,7 @@ function ProductSection() {
         pin: true,
         scrub: true,
         anticipatePin: 1,
-        markers: true,
+        //markers: true,
       },
     });
     splitTween
@@ -175,7 +175,7 @@ function ProductSection() {
       .to(
         nightAndDayCreamTextRef.current,
         {
-          x: "28%",
+          x: "30%",
           duration: 3,
         },
         "-=3"
@@ -217,8 +217,8 @@ function ProductSection() {
             <img alt="" src={dayCream} />
           </div>
           <div ref={nightAndDayCreamTextRef} className="product__text__right">
-            <p>REPAIRING</p>
-            <p>Foam cleaner</p>
+            <p>ACTIVE</p>
+            <p>Day & Night Cream</p>
           </div>
         </div>
       </StyledProductSection>
