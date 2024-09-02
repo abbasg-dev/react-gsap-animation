@@ -4,6 +4,7 @@ import ParallaxHeroSection from "./components/ParallaxHeroSection";
 import ContentSection from "./components/ContentSection";
 import CrossRevealSection from "./components/CrossRevealSection";
 import ProductSection from "./components/ProductSection";
+import VideoSequenceSection from "./components/VideoSequenceSection";
 import FaceOne from "./assets/images/faceOne.png";
 import LandscapeOne from "./assets/images/landscapeOne.png";
 import LandscapeTwo from "./assets/images/landscapeTwo.png";
@@ -73,6 +74,13 @@ function App() {
         sentenceTwo={"What we love"}
         crossreveal={"yPercent"}
       />
+      <ContentSection
+        title={"Take Care"}
+        text={
+          "Poutine trust fund DIY pabst, art party hoodie you probably haven't heard of them single-origin coffee kombucha slow-carb glossier occupy cliche."
+        }
+      />
+      <VideoSequenceSection />
     </>
   );
 }
