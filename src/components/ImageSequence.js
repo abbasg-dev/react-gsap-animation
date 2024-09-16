@@ -70,7 +70,7 @@ import image_0068 from "../assets/sequence/0068.png";
 import image_0069 from "../assets/sequence/0069.png";
 import image_0070 from "../assets/sequence/0070.png";
 
-export const iphoneimages = [
+export const iphone_images = [
   image_0000,
   image_0001,
   image_0002,

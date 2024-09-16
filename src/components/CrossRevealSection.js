@@ -57,14 +57,14 @@ const StyledCrossRevealContainer = styled.section`
       font-weight: 700;
       font-size: 80px;
       letter-spacing: -0.015em;
-      color: #a7b0af;
+      color: #fff;
     }
     .author__name {
       font-weight: 700;
       font-size: 28px;
       line-height: 1.14286;
       letter-spacing: 0;
-      color: #a7b0af;
+      color: #fff;
       padding-top: 20px;
     }
   }

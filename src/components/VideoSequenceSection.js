@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import styled from "styled-components";
+import { iphone_images } from "../components/ImageSequence";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const StyledVideoSequenceSection = styled.div`
   background: #080f0f;
@@ -68,8 +73,56 @@ const StyledVideoSequenceSection = styled.div`
 `;
 
 function VideoSequenceSection() {
+  const videoSequenceTriggerRef = useRef();
+  const canvasRef = useRef();
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const context = canvas.getContext("2d");
+    canvas.width = 851;
+    canvas.height = 1200;
+
+    const frameCount = 71;
+    const currentFrame = (index) => {
+      return iphone_images[index];
+    };
+
+    const iphone = {
+      frame: 0,
+    };
+    const images = [];
+    for (let i = 0; i < frameCount; i++) {
+      const img = new Image();
+      img.src = currentFrame(i);
+      images.push(img);
+    }
+    // console.log(images)
+
+    gsap.to(iphone, {
+      frame: frameCount - 1,
+      snap: "frame",
+      scrollTrigger: {
+        trigger: videoSequenceTriggerRef.current,
+        start: "center center",
+        end: () => "+=" + videoSequenceTriggerRef.current.offsetHeight,
+        scrub: true,
+        pin: true,
+        anticipatePin: true,
+        //markers: true,
+      },
+      onUpdate: updateImage,
+    });
+
+    images[0].onload = updateImage;
+
+    function updateImage(index) {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(images[iphone.frame], 0, 0);
+    }
+  }, []);
+
   return (
-    <StyledVideoSequenceSection>
+    <StyledVideoSequenceSection ref={videoSequenceTriggerRef}>
       <div className="video__sequence__wrapper">
         <div className="video__sequence__container">
           <div className="video__sequence__text">
@@ -88,7 +141,7 @@ function VideoSequenceSection() {
             </a>
           </div>
           <div className="video__sequence__image">
-            <canvas />
+            <canvas ref={canvasRef} />
           </div>
         </div>
       </div>
