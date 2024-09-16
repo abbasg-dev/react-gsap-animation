@@ -30,7 +30,7 @@ const StyledVideoSequenceSection = styled.div`
         line-height: 0.875;
         font-weight: 700;
         letter-spacing: 0.008em;
-        color: #fff;
+        color: #ffffff;
       }
       h2 {
         padding: 10px;
@@ -39,7 +39,7 @@ const StyledVideoSequenceSection = styled.div`
         font-weight: 700;
         letter-spacing: 0.002em;
         margin-top: 8px;
-        color: #fff;
+        color: #ffffff;
       }
       a.video__sequence__button {
         display: inline-block;

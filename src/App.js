@@ -5,6 +5,7 @@ import ContentSection from "./components/ContentSection";
 import CrossRevealSection from "./components/CrossRevealSection";
 import ProductSection from "./components/ProductSection";
 import VideoSequenceSection from "./components/VideoSequenceSection";
+import Cursor from "./components/Cursor";
 import FaceOne from "./assets/images/faceOne.png";
 import LandscapeOne from "./assets/images/landscapeOne.png";
 import LandscapeTwo from "./assets/images/landscapeTwo.png";
@@ -36,6 +37,7 @@ const StyledTitle = styled.h1`
 function App() {
   return (
     <>
+      <Cursor />
       <StyledHeroSection>
         <img src={logo} alt="logo" />
         <StyledTitle>Back to smooth and firm skin</StyledTitle>
