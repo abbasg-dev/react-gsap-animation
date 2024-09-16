@@ -49,7 +49,7 @@ function App() {
       <ContentSection
         title={"Take Care"}
         text={
-          "Poutine trust fund DIY pabst, art party hoodie you probably haven't heard of them single-origin coffee kombucha slow-carb glossier occupy cliche."
+          "You can get your skin and body in tip-top shape without taking your toll on the environment."
         }
       />
       <CrossRevealSection
@@ -64,7 +64,7 @@ function App() {
       <ContentSection
         title={"Take Care"}
         text={
-          "Poutine trust fund DIY pabst, art party hoodie you probably haven't heard of them single-origin coffee kombucha slow-carb glossier occupy cliche."
+          "You can get your skin and body in tip-top shape without taking your toll on the environment."
         }
       />
       <CrossRevealSection
@@ -79,7 +79,7 @@ function App() {
       <ContentSection
         title={"Take Care"}
         text={
-          "Poutine trust fund DIY pabst, art party hoodie you probably haven't heard of them single-origin coffee kombucha slow-carb glossier occupy cliche."
+          "You can get your skin and body in tip-top shape without taking your toll on the environment."
         }
       />
       <VideoSequenceSection />
